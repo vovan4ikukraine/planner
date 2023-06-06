@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Planner</title>
+    <meta name="description" content="Planning works system">
+</head>
+
+<body>
+    <div class="admin_panel">
+            <div class="admin_info">
+              <p id="admin_name"></p>
+              <button id="logout_button">Вихід</button>
+            </div>
+            <div class="admin_menu">
+                  <li><button class="menu_btn" onclick="showProjectsPanel()">Проекти</button></li>
+                  <li><button class="menu_btn" onclick="showWorkersPanel()">Працівники</button></li>
+                  <li><button class="menu_btn" onclick="showInventoryPanel()">Склад</button></li>
+            </div>
+    </div>
+
+    <div class="workspace">
+        <div id="projects_panel" class="panel">
+            <p>Проекти</p>
+          </div>
+        
+          <div id="workers_panel" class="panel">
+            <p>Працівники</p>
+          </div>
+        
+          <div id="inventory_panel" class="panel">
+
+        </div>
+        <div id="add_equipment_form" class="form">
+            <span class="close_button" onclick="hideForm('add_equipment_form')">&times;</span>
+            <h2>Додати екіпірування</h2>
+            <input type="text" id="equipment_name_input" placeholder="Назва" required>
+            <input type="number" id="quantity_input" placeholder="Кількість">
+            <button onclick="addEquipment()">Додати</button>
+        </div>
+        <div id="edit_equipment_form" class="form">
+          <span class="close_button" onclick="hideForm('edit_equipment_form')">&times;</span>
+          <h2>Змінити</h2>
+          <label for="edit_equipment_name">Назва:</label>
+          <input type="text" id="edit_equipment_name" required>
+          <label for="edit_equipment_quantity">Кількість:</label>
+          <input type="number" id="edit_equipment_quantity">
+          <button>Зберегти</button>
+        </div>
+        <div id="increase_quantity_form" class="form">
+          <h2>Додати</h2>
+          <span class="close_button" onclick="hideForm('increase_quantity_form')">&times;</span>
+          <label for="quantity_increase">Збільшити на:</label>
+          <input type="number" id="quantity_increase" name="quantity_increase" min="0" required>
+          <button type="submit">Збільшити</button>
+        </div>
+        <div id="decrease_quantity_form" class="form">
+          <h2>Відняти</h2>
+          <span class="close_button" onclick="hideForm('decrease_quantity_form')">&times;</span>
+          <label for="quantity_decrease">Зменшити на:</label>
+          <input type="number" id="quantity_decrease" name="quantity_decrease" min="0" required>
+          <button type="submit">Зменшити</button>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="hideOverlay()"></div>
+    
+<script src="js/scripts.js"></script>
+</body>
+</html>

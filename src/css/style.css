@@ -1,0 +1,314 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+}
+
+.admin_panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    background: #f2f2f2;
+    float: left;
+  }
+
+.admin_info {
+    padding: 20px;
+    height: 20%;
+    background: gray;
+}
+
+.admin_info p {
+    margin: 0;
+  }
+  
+.workspace {
+    margin-left: 20%;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+.panel {
+    display: none;
+  }
+
+.menu_btn {
+    height: 60px;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+ .menu_btn:active {
+    background-color: #003380;
+  }
+
+li {
+    list-style: none;
+}
+
+/* REGISTRATION AUTHORIZATION */
+
+.forms {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/*-------------------------------*/
+
+.add_button {
+  position: absolute;
+  opacity: 0,9;
+  bottom: 50px;
+  right: 50px;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 72px;
+  font-weight: bold;
+  background-color: #6DBF62;
+  border-radius: 50%;
+  border-style: none;
+  cursor: pointer;
+}
+
+.add_button:hover {
+  animation: bounce 0.5s;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Прозрачный черный цвет фона */
+  z-index: 999; /* Устанавливаем высокий z-index, чтобы overlay была поверх остального содержимого */
+  display: none; /* Изначально скрываем overlay */
+}
+
+.overlay.active {
+  display: block; /* Показываем overlay при активной форме */
+}
+
+#add_equipment_form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  max-width: 300px;
+  text-align: center;
+}
+
+#add_equipment_form.active {
+  display: block;
+}
+
+#edit_equipment_form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  max-width: 300px;
+  text-align: center;
+}
+
+#edit_equipment_form.active {
+  display: block;
+}
+
+#increase_quantity_form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  max-width: 300px;
+  text-align: center;
+}
+
+#increase_quantity_form.active {
+  display: block;
+}
+
+#decrease_quantity_form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 9999;
+  max-width: 300px;
+  text-align: center;
+}
+
+#decrease_quantity_form.active {
+  display: block;
+}
+
+.form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.form button {
+  background-color: #6DBF62;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #5CA854;
+}
+
+.form .close_button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
+  background-color: #6DBF62;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.edit_button, .delete_button, .increase_button, .decrease_button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.pagination {
+  margin-top: 10px;
+}
+
+.page_button {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #f2f2f2;
+  border: none;
+  cursor: pointer;
+}
+
+.page_button.active {
+  background-color: #228BE6;
+  color: #fff;
+}
+
+.edit_button:hover, .delete_button:hover, .increase_button:hover, .decrease_button:hover {
+	animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+
+	80% {
+		transform: translateY(-5px);
+		transform: translateY(-5px);
+	}
+}
